@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iti_track,iti_track,model_iti_track,iti_school_admin_group,1,1,1,1
+access_iti_students,iti_students,model_iti_students,iti_school_user_group,1,1,1,1
+access_iti_skills,iti_skills,model_iti_skills,iti_school_admin_group,1,1,1,1
+access_iti_create_track_wizard,iti_create_track_wizard,model_iti_create_track_wizard,"",1,1,1,1

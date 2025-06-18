@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="iti_student_track_view">
+        <field name="name">tracks.Form</field>
+        <field name="model">iti.track</field>
+        <field name="arch" type="xml">
+            <form string="tracks">
+                <sheet>
+                    <group>
+                        <field name="track_no"/>
+                        <field name="category"/>
+                        <field name="duration"/>
+                        <button type="object" name="add_student"
+                                string="Add Student"/>
+
+                        <field name="student_ids" widget="many2many_tags"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="iti_track_list_view">
+        <field name="name">Track List</field>
+        <field name="model">iti.track</field>
+        <field name="arch" type="xml">
+            <list string="Tracks">
+                <field name="track_no"/>
+                <field name="category"/>
+                <field name="duration"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="action_track" model="ir.actions.act_window">
+        <field name="name">Tracks</field>
+        <field name="res_model">iti.track</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="iti_track_menu" name="Tracks" action="action_track" parent="school_management_menu_root"/>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_student_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2>Student Details</h2>
+                            <table class="table" style="width:100%; border-collapse: collapse; text-align: left;">
+                                <thead>
+                                    <tr style="background-color:#ddd; border: 1px solid black;">
+                                        <th>
+                                            Name
+                                        </th>
+                                        <th>
+                                            Category
+                                        </th>
+                                        <th>
+                                            Salary
+                                        </th>
+                                        <th>
+                                            Track
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="border: 1px solid black;padding: 8px">
+                                            <t t-esc="doc.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 8px">
+                                            <t t-esc="doc.category"/>
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 8px">
+                                            <t t-if="doc.salary > 500">
+                                                <span style="color:red" t-esc="doc.salary"/>
+                                            </t>
+                                            <t t-else="">
+                                                <span t-esc="doc.salary"/>
+                                            </t>
+                                        </td>
+                                        <td style="border: 1px solid black;padding: 8px">
+                                            <t t-esc="doc.track_id.track_no"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <h2>Student Skills</h2>
+                            <table class="table" style="width:100%; border-collapse: collapse; text-align: left;">
+                                <thead>
+                                    <tr style="background-color:#ddd; border: 1px solid black;">
+                                        <th>
+                                            Skill
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.skills_ids" t-as="skill">
+                                        <tr>
+                                            <td style="border: 1px solid black;padding: 8px">
+                                                <t t-esc="skill.name"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

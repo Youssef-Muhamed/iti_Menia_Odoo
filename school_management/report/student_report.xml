@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="print_student_report" model="ir.actions.report">
+            <field name="name">Students</field>
+            <field name="model">iti.students</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">school_management.report_student_template</field>
+            <field name="report_file">school_management.report_student_template</field>
+            <field name="binding_model_id" ref="model_iti_students"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <!--        <report-->
+        <!--                id="report_ModelName"-->
+        <!--                model="ProjectName.ModelName"-->
+        <!--                string="ReportTitle"-->
+        <!--                name="ProjectName.report_ModelName_view"-->
+        <!--                file="ProjectName.report_ModelName"-->
+        <!--                report_type="qweb-pdf"/>-->
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="iti_student_skills_view">
+        <field name="name">skills.Form</field>
+        <field name="model">iti.skills</field>
+        <field name="arch" type="xml">
+            <form string="skills">
+                <sheet>
+                    <group>
+                       <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="iti_skills_list_view">
+        <field name="name">Skills List</field>
+        <field name="model">iti.skills</field>
+        <field name="arch" type="xml">
+            <list string="Tracks">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_skills" model="ir.actions.act_window">
+        <field name="name">Skills</field>
+        <field name="res_model">iti.skills</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="iti_skills_menu" name="Skills" action="action_skills" parent="school_management_menu_root" />
+</odoo>
